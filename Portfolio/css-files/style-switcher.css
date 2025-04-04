@@ -1,0 +1,97 @@
+:root
+{
+    --bg-black-900:#f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900:#302e4d;
+    --text-black-700:#504e70;
+}
+
+
+.style-switcher{
+    position: fixed;
+    right: 0;
+    top: 60px;
+    z-index: 101;
+    padding: 15px;
+    width: 200px;
+    border: 1px solid var(--bg-black-50);
+    background: var(--bg-black-100);
+    border-radius: 5px  ;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+.style-switcher.open{
+    transform: translateX(-25px);
+}
+
+.style-switcher .s-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px; /* Center icon vertically */
+    font-size: 20px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900); /* More visible than bg-black-900 */
+    right: 100%;
+    top: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some visibility */
+    cursor: pointer;
+    margin-right: 25px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.style-switcher .day-night  {
+    top: 55px;
+
+}
+
+.style-switcher .style-switcher-toggler{
+    top: 0;
+}
+
+.style-switcher h4{
+    margin: 0 0 10px;
+    color: var(--text-black-700);
+    font-weight:16px;
+    text-transform: capitalize;
+    font-size:600;
+}
+
+.style-switcher .colors{
+     display: flex;
+     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.style-switcher .colors span{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius:50% ;
+    border: 1px solid red;
+
+}
+
+.style-switcher .color-1{
+    background: #ec1839;
+}
+.style-switcher .color-2{
+    background: #fa5b0f;
+}
+.style-switcher .color-3{
+    background: #37b182;
+}
+.style-switcher .color-4{
+    background: #1854b4;
+}
+.style-switcher .color-5{
+    background: #f021b2;
+}
