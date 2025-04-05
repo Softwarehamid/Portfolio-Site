@@ -8,11 +8,20 @@
     --text-black-700: #504e70;
 }
 
+
 html, body {
     max-width: 100vw;
     overflow-x: hidden;
-  }
-  
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html.dark-mode-preload body {
+  background-color: #151515; /* Same as your dark background */
+  color: white;
+}
 
 /* DARK MODE (when body has class 'dark') */
 body.dark {
@@ -67,7 +76,7 @@ ul{
     background-color: var(--bg-black-900);
     min-height: 100vh;
     padding: 0px 30px;
-    position: absolute; /* Changed from fixed */
+    position: fixed; /* Changed from fixed */
     top: 0;
     left: 270px;
     right: 0;
@@ -75,11 +84,10 @@ ul{
     overflow-y: auto;
     overflow-x: hidden;
     opacity: 0;
-    transform: translateX(100%); /* Start off-screen */
-    pointer-events: none;
     visibility: hidden;
-    z-index: 0;
-    transition: none;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
   .section.active {
@@ -87,8 +95,6 @@ ul{
     transform: translateX(0);
     visibility: visible;
     pointer-events: auto;
-    z-index: 2;
-    animation: slideIn 0.5s ease forwards;
   }
   
   @keyframes slideIn {
@@ -822,6 +828,11 @@ justify-content: center;
   }
   
 
+.main-content {
+    background-color: var(--bg-black-900); /* Default background color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
 @media (max-width:1199px)
 {
     .aside{
@@ -968,5 +979,51 @@ justify-content: center;
       padding: 10px 0;
       font-size: 16px;
     }
+
+    .skill-percent {
+        display: none;
+    }
+
+    .about .about-content .personal-info {
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+    
+      .about .about-content .personal-info .info-item {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    
+      .about .about-content .personal-info .info-item p {
+        white-space: normal; /* let text wrap naturally */
+        word-break: break-word; /* prevents long URLs/emails from overflowing */
+    }
+
+    .service .service-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    
+      .section .service-item .service-item-inner {
+        text-align: center;
+        padding: 25px;
+      }
+      .contact .contact-info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    
+      .contact .contact-info-item p {
+        word-break: break-word; /* Prevent long email/URLs from breaking layout */
+        text-align: center;
+      }
+    
+      .contact .contact-info-item h4 {
+        text-align: center;
+      }
+    
+      .contact .contact-info-item .icon {
+        display: block;
+        margin: 0 auto;
+    }
   }
-  
