@@ -86,3 +86,8 @@ window.addEventListener("scroll", () => {
     toggleAsideMenu();
   }
 }, true); // use capture to detect scroll in nested elements
+
+
+function fakeDownloadCV() {
+  alert("This is a demo. CV download will be available soon!");
+}
