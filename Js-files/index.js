@@ -23,13 +23,15 @@ function toggleAsideMenu() {
 
   // Disable scroll when menu is open
   if (window.innerWidth <= 1199) {
-    document.body.style.overflow = aside.classList.contains("open") ? "hidden" : "";
+    document.body.style.overflow = aside.classList.contains("open")
+      ? "hidden"
+      : "";
   }
 }
 
 // Set active section
 function activateSection(targetId) {
-  allSections.forEach(section => {
+  allSections.forEach((section) => {
     section.classList.remove("back-section", "active");
   });
 
@@ -43,7 +45,7 @@ function activateSection(targetId) {
     targetSection.classList.add("active");
   }
 
-  navLinks.forEach(link => link.classList.remove("active"));
+  navLinks.forEach((link) => link.classList.remove("active"));
   const matchingLink = document.querySelector(`.nav li a[href="#${targetId}"]`);
   if (matchingLink) {
     matchingLink.classList.add("active");
@@ -55,8 +57,8 @@ function activateSection(targetId) {
 }
 
 // Nav link clicks
-navLinks.forEach(link => {
-  link.addEventListener("click", e => {
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
     const targetId = link.getAttribute("href").split("#")[1];
     activateSection(targetId);
@@ -67,25 +69,30 @@ navLinks.forEach(link => {
 navTogglerBtn.addEventListener("click", toggleAsideMenu);
 
 // Hire Me button
-hireMeBtn?.addEventListener("click", e => {
+hireMeBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   activateSection("contact");
 });
 
 // Close nav when clicking outside
-document.addEventListener("click", e => {
-  const isClickInside = aside.contains(e.target) || navTogglerBtn.contains(e.target);
+document.addEventListener("click", (e) => {
+  const isClickInside =
+    aside.contains(e.target) || navTogglerBtn.contains(e.target);
   if (!isClickInside && aside.classList.contains("open")) {
     toggleAsideMenu();
   }
 });
 
 // 🔥 Always-active scroll-to-close nav
-window.addEventListener("scroll", () => {
-  if (window.innerWidth <= 1199 && aside.classList.contains("open")) {
-    toggleAsideMenu();
-  }
-}, true); // use capture to detect scroll in nested elements
+window.addEventListener(
+  "scroll",
+  () => {
+    if (window.innerWidth <= 1199 && aside.classList.contains("open")) {
+      toggleAsideMenu();
+    }
+  },
+  true
+); // use capture to detect scroll in nested elements
 
 
 function fakeDownloadCV() {
