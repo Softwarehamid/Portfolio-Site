@@ -44,6 +44,10 @@ body.dark .projects .project-heading p {
   color: var(--text-black-900); /* White text in dark mode */
 }
 
+body.dark .btn:hover {
+  color: var(--bg-black-900); /* makes text visible in dark mode */
+}
+
 body {
   margin: 0;
   padding: 0;
