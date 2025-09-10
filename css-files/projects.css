@@ -1,99 +1,177 @@
-/* Projects Section */
+/* =========================
+   Projects Section (polished)
+   ========================= */
 .projects {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
+/* row helper (no HTML changes needed) */
+.projects .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px; /* balances the item padding so gutters are even */
+}
+
+/* Section headings */
 .projects .project-heading,
 .projects .projects-heading {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .projects .project-heading h2,
 .projects .projects-heading h3 {
-    color: var(--text-black-900);
-    font-weight: 700;
+  color: var(--text-black-900);
+  font-weight: 700;
 }
 
 .projects .project-heading p,
 .projects .projects-heading p {
-    font-size: 16px;
-    color: var(--text-black-700);
-    line-height: 25px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+  font-size: 16px;
+  color: var(--text-black-700);
+  line-height: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
+/* Grid items */
 .projects .project-item,
 .projects .projects-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    margin-bottom: 30px;
-    box-sizing: border-box;
-    padding: 10px;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
+/* Card */
 .projects .project-item .project-item-inner,
 .projects .projects-item .projects-item-inner {
-    background-color: var(--bg-black-100);
-    color: var(--text-black-900);
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    text-align: center;
+  background-color: var(--bg-black-100);
+  color: var(--text-black-900);
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* polish */
+  padding: 15px;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
+  will-change: transform;
+  height: 100%;
 }
 
 .projects .projects-item .projects-item-inner:hover,
 .projects .project-item .project-item-inner:hover {
-    border-color: var(--skin-color);
-    transform: scale(1.05);
+  border-color: var(--skin-color);
+  transform: translateY(-4px);          /* smooth lift without layout jitter */
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
 }
 
+/* Thumbnail */
 .projects .projects-item .projects-item-inner img,
 .projects .project-item .project-item-inner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    margin-bottom: 15px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+  /* keep all screenshots identical shape */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: filter .22s ease, transform .22s ease;
 }
 
+.projects .projects-item .projects-item-inner:hover img,
+.projects .project-item .project-item-inner:hover img {
+  filter: saturate(1.05);
+}
+
+/* Text */
 .projects .project-item .project-item-inner h4,
 .projects .projects-item .projects-item-inner h4 {
-    color: var(--text-black-900);
-    margin-bottom: 10px;
+  color: var(--text-black-900);
+  margin-bottom: 10px;
 }
 
 .projects .project-item .project-item-inner p,
 .projects .projects-item .projects-item-inner p {
-    color: var(--text-black-700);
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 15px;
+  color: var(--text-black-700);
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 15px;
 }
 
-.projects .project-item .project-item-inner .btn,
-.projects .projects-item .projects-item-inner .btn {
-    margin-top: auto;
+/* Make the info column flex so buttons stick to the bottom */
+.projects .projects-item .projects-info,
+.projects .project-item .project-item-inner .projects-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex: 1 1 auto;
 }
 
-/* Education & Experience Section Fixes */
+/* Buttons row */
+.project-buttons {
+  margin-top: auto;               /* pushes buttons to the bottom of the card */
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* If you want to override inline paddings on the <a class="btn"> in HTML, keep these. 
+   (Inline wins unless we mark important; these match your inline values anyway.) */
+.project-buttons .btn {
+  padding: 10px 20px !important;
+  margin: 8px !important;
+  display: inline-block;
+}
+
+/* Focus visibility for keyboard users */
+.projects .projects-item .btn:focus-visible,
+.projects .project-item .btn:focus-visible {
+  outline: 2px solid var(--skin-color);
+  outline-offset: 2px;
+}
+
+/* Responsive columns: 3 → 2 → 1 */
+@media (max-width: 1024px) {
+  .projects .project-item,
+  .projects .projects-item { flex: 0 0 50%; max-width: 50%; }
+}
+@media (max-width: 640px) {
+  .projects .project-item,
+  .projects .projects-item { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .projects .projects-item .projects-item-inner,
+  .projects .projects-item .projects-item-inner img {
+    transition: none;
+  }
+}
+
+/* ==============================
+   Education & Experience Section
+   ============================== */
 .education .timeline,
 .experience .timeline,
 .timeline-box {
-    background-color: var(--bg-black-100);
-    color: var(--text-black-900);
-    border: 1px solid var(--bg-black-50);
-    padding: 15px;
+  background-color: var(--bg-black-100);
+  color: var(--text-black-900);
+  border: 1px solid var(--bg-black-50);
+  padding: 15px;
 }
 
 .timeline h4,
@@ -101,15 +179,15 @@
 .timeline .circle-dot,
 .education .title,
 .experience .title {
-    color: var(--text-black-900);
+  color: var(--text-black-900);
 }
 
 .timeline p,
 .timeline span,
 .timeline li {
-    color: var(--text-black-700);
-    font-size: 15px;
-    line-height: 22px;
+  color: var(--text-black-700);
+  font-size: 15px;
+  line-height: 22px;
 }
 
 /* Dark mode fix for education & experience headings */
@@ -118,47 +196,49 @@ body.dark .experience .title,
 body.dark .timeline h4,
 body.dark .timeline p,
 body.dark .timeline span {
-    color: var(--text-black-900);
+  color: var(--text-black-900);
 }
 
-/* Skills section without extra border styling */
+/* =================
+   Skills formatting
+   ================= */
 .about .about-content .skills .skill-item,
 .skill-item {
-    color: var(--text-black-900);
-    margin-bottom: 20px;
+  color: var(--text-black-900);
+  margin-bottom: 20px;
 }
 
 .skill-item h5 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--text-black-900);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-black-900);
 }
 
 .skill-percent {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-black-700);
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-black-700);
 }
 
 .progress {
-    background-color: var(--bg-black-50);
-    height: 10px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
+  background-color: var(--bg-black-50);
+  height: 10px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
 }
 
 .progress-in {
-    background-color: var(--skin-color);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: width 0.6s ease;
+  background-color: var(--skin-color);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.6s ease;
 }

@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- in <head> -->
+    <meta property="og:title" content="Abdulhamid Oguntade — Developer" />
+    <meta property="og:description" content="Projects, skills, and contact info." />
+    <!-- <meta property="og:image" content="https://abdulhamidoguntade.com/og/cover.png" /> -->
+    <meta property="og:url" content="https://abdulhamidoguntade.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8fafc"  media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+
     <title>Abdulhamid | Portfolio</title>
 
 
@@ -26,6 +38,7 @@
     <link rel="stylesheet" href="css-files/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css-files/projects.css">
+    <link rel="stylesheet" href="css-files/contact-info.css">
 </head>
 <body class="dark">
     <!-- Main Container start -->
@@ -117,8 +130,8 @@
                                     <p>Birthday: <span>27 May 2005</span></p>
                                   </div>
                                   <div class="info-item padd-15">
-                                    <p>Age: <span>19</span></p>
-                                  </div>
+                                  <p>Age: <span id="age" data-dob="2005-05-27">20</span></p>
+                                </div>
                                   <div class="info-item padd-15">
                                     <p>Website: <span><a href="https://abdulhamidoguntade.com">abdulhamidoguntade.com</a></span></p>
                                   </div>
@@ -149,25 +162,26 @@
                             </div>
                             <div class="skills padd-15">
                                 <div class="row">
+                                  <!-- CSS 60% -->
+<div class="skill-item padd-15">
+  <h5>CSS</h5>
+  <div class="skill-percent">60%</div>
+  <div class="progress">
+    <div class="progress-in" style="width: 60%"></div>
+  </div>
+</div>
                                   <div class="skill-item padd-15">
-                                    <h5>CSS</h5>
+                                    <h5>JS</h5>
                                     <div class="skill-percent">50%</div>
                                     <div class="progress">
                                       <div class="progress-in" style="width: 50%"></div>
                                     </div>
                                   </div>
                                   <div class="skill-item padd-15">
-                                    <h5>JS</h5>
-                                    <div class="skill-percent">40%</div>
-                                    <div class="progress">
-                                      <div class="progress-in" style="width: 40%"></div>
-                                    </div>
-                                  </div>
-                                  <div class="skill-item padd-15">
                                     <h5>Python</h5>
-                                    <div class="skill-percent">60%</div>
+                                    <div class="skill-percent">70%</div>
                                     <div class="progress">
-                                      <div class="progress-in" style="width: 60%"></div>
+                                      <div class="progress-in" style="width: 70%"></div>
                                     </div>
                                   </div>
                                   <div class="skill-item padd-15">
@@ -179,9 +193,9 @@
                                   </div>
                                   <div class="skill-item padd-15">
                                     <h5>HTML</h5>
-                                    <div class="skill-percent">80%</div>
+                                    <div class="skill-percent">90%</div>
                                     <div class="progress">
-                                      <div class="progress-in" style="width: 80%"></div>
+                                      <div class="progress-in" style="width: 90%"></div>
                                     </div>
                                   </div>
                                   <div class="skill-item padd-15">
@@ -191,6 +205,25 @@
                                       <div class="progress-in" style="width: 40%"></div>
                                     </div>
                                   </div>
+                                  <!-- TypeScript -->
+<div class="skill-item padd-15">
+  <h5>TypeScript</h5>
+  <div class="skill-percent">20%</div>
+  <div class="progress">
+    <div class="progress-in" style="width: 20%"></div>
+  </div>
+</div>
+
+<!-- Tailwind CSS -->
+<div class="skill-item padd-15">
+  <h5>Tailwind CSS</h5>
+  <div class="skill-percent">20%</div>
+  <div class="progress">
+    <div class="progress-in" style="width: 20%"></div>
+  </div>
+</div>
+
+
                                 </div>
                             </div>
                             <div class="row full-width">
@@ -372,16 +405,35 @@
                   </div>
                 </div>
               </div>
-                    <div class="projects-item">
-                        <div class="projects-item-inner">
-                            <img src="images/portfolio/portfolio-3.jpg" alt="Project Image">
-                            <div class="projects-info">
-                                <h4>Project Title</h4>
-                                <p>Project description goes here.</p>
-                                <a href="#" class="btn">View Project</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Weather Dashboard -->
+<div class="projects-item">
+  <div class="projects-item-inner">
+    <img src="images/projects/light-mode.png"
+         alt="Weather Dashboard project screenshot">
+    <div class="projects-info">
+      <h4>🌤️ Weather Dashboard</h4>
+      <p>
+        React + TypeScript + Vite + Tailwind. Search any city for current weather
+        and a 5-day forecast. Dark mode and °F/°C toggle.
+      </p>
+      <div class="project-buttons">
+        <a href="https://weather.abdulhamidoguntade.com"
+           target="_blank"
+           class="btn"
+           style="padding: 10px 20px; margin: 8px; display: inline-block;">
+          🌐 Live Demo
+        </a>
+        <a href="https://github.com/Softwarehamid/weather-dashboard"
+           target="_blank"
+           class="btn"
+           style="padding: 10px 20px; margin: 8px; display: inline-block;">
+          💻 View Code
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
                     <div class="projects-item">
                         <div class="projects-item-inner">
                             <img src="images/portfolio/portfolio-4.jpg" alt="Project Image">
@@ -448,12 +500,32 @@
                         <p>Abdulhamidoguntade27@gmail.com</p>
                       </div>
                    <!-- Contact info item start -->
-                      <div class="contact-info-item padd-15">
-                        <div class="icon"><i class="fa fa-globe-europe"></i></div>                    
-                        <h4>Website</h4>
-                        <p>www.domain.com</p>
-                      </div>
-                    <!-- Contact info item End -->
+<div class="contact-info-item padd-15">
+  <div class="icon"><i class="fa fa-globe-europe"></i></div>
+  <h4>Profiles</h4>
+
+  <p>
+  <i class="fab fa-github" aria-hidden="true"></i>
+  <a href="https://github.com/Softwarehamid"
+     target="_blank" rel="noopener"
+     aria-label="GitHub profile: Softwarehamid">
+    GitHub Profile
+  </a>
+</p>
+
+
+  <p>
+    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+    <a href="https://www.linkedin.com/in/abdulhamid-oguntade-9a6262286/"
+      target="_blank" rel="noopener"
+      aria-label="LinkedIn profile: Abdulhamid Oguntade">
+      LinkedIn Profile
+    </a>
+</p>
+
+</div>
+<!-- Contact info item End -->
+
                   </div>
                   <h3 class="contact-title padd-15">SEND ME AN EMAIL </h3>
                   <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
@@ -529,5 +601,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="Js-files/index.js"></script>
     <script src="Js-files/style-switcher.js"></script>
+    <script src="Js-files/age.js"></script>
+
 </body>
 </html>

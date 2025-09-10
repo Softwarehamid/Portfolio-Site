@@ -1,0 +1,96 @@
+/* =========================
+   Contact section — simple / borderless
+   ========================= */
+.contact .contact-info-item {
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin-bottom: 60px;
+  text-align: center;
+
+  /* remove card look */
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0;
+  padding: 8px 6px;
+  box-shadow: none !important;
+
+  /* kill card hover */
+  transform: none !important;
+}
+.contact .contact-info-item:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* icon with subtle hover only */
+.contact .contact-info-item .icon .fa {
+  font-size: 26px;
+  color: var(--skin-color);
+  transition: transform .15s ease, color .15s ease;
+  line-height: 1;
+}
+.contact .contact-info-item .icon .fa:hover {
+  color: var(--text-black-900);
+  transform: translateY(-2px);
+}
+
+/* headings + text */
+.contact .contact-info-item h4 {
+  font-size: 18px;
+  color: var(--text-black-900);
+  margin: 10px 0 6px;
+  font-weight: 700;
+}
+
+/* make link rows (GitHub / LinkedIn) keep icon + text on one line */
+.contact .contact-info-item p {
+  font-size: 16px;
+  color: var(--text-black-700);
+  line-height: 24px;
+  font-weight: 400;
+  margin: 2px 0;
+
+  display: flex;                /* keeps icon + link together */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* links inside the p tags */
+.contact .contact-info-item p a {
+  color: var(--text-black-700);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px; /* adjust if needed */
+  display: inline-block;
+}
+.contact .contact-info-item p a:hover {
+  color: var(--skin-color);
+  text-decoration: underline;
+}
+
+/* small brand icons next to links */
+.contact .contact-info-item p i {
+  color: var(--skin-color);
+  font-size: 15px;
+  margin-right: 2px;
+  line-height: 1;
+}
+
+/* small space between the two profile lines */
+.contact .contact-info-item p + p { margin-top: 4px; }
+
+/* responsive: 4 → 2 → 1 */
+@media (max-width: 992px) {
+  .contact .contact-info-item { flex: 0 0 50%; max-width: 50%; }
+}
+@media (max-width: 576px) {
+  .contact .contact-info-item { flex: 0 0 100%; max-width: 100%; }
+  .contact .contact-info-item p { justify-content: flex-start; }
+}
+/* =========================
+   Projects section
+   ========================= */
