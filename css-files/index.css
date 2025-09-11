@@ -493,13 +493,12 @@ h3.my-pofession {
   margin-top: 40px;
   margin-bottom: 25px;
   position: relative; /* For positioning skill-percent */
-
 }
 
 .skill-item {
-   flex: 0 0 50%;
+  flex: 0 0 50%;
   max-width: 50%;
-  position: relative;   /* keep this */
+  position: relative; /* keep this */
 }
 
 .skill-item h5 {
@@ -571,8 +570,9 @@ h3.my-pofession {
   position: relative;
 }
 
-.shadow-dark { box-shadow: 0 0 20px rgba(48,46,77,0.15); }
-
+.shadow-dark {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
 
 .about
   .about-content

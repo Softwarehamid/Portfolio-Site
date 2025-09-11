@@ -14,19 +14,19 @@ body.dark section.projects .projects-heading p {
 
 /* Use the section's container as the grid parent */
 section.projects .container {
-  max-width: 1280px;         /* give the grid more breathing room */
+  max-width: 1280px; /* give the grid more breathing room */
   margin: 0 auto;
   padding: 0 16px;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns desktop */
   gap: 32px;
-  align-items: start;        /* keep rows straight */
+  align-items: start; /* keep rows straight */
 }
 
 /* Keep your existing .row wrappers but flatten them for layout */
 section.projects .container > .row {
-  display: contents;         /* keeps markup, removes extra layout layer */
+  display: contents; /* keeps markup, removes extra layout layer */
   margin: 0;
   padding: 0;
 }
@@ -56,12 +56,12 @@ section.projects .projects-item .projects-item-inner {
   border-radius: 14px;
   padding: 18px;
 
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 section.projects .projects-item .projects-item-inner:hover {
   transform: translateY(-3px);
   border-color: var(--skin-color);
-  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
 }
 
 /* Thumbnail — larger and responsive */
@@ -121,7 +121,7 @@ section.projects .project-buttons .btn {
 /* --- Responsive: 1 column on tablets/phones --- */
 @media (max-width: 1024px) {
   section.projects .container {
-    grid-template-columns: 1fr;  /* single column */
+    grid-template-columns: 1fr; /* single column */
     gap: 24px;
   }
   section.projects .projects-item .projects-item-inner {
