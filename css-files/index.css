@@ -269,9 +269,15 @@ ul {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-  position: relative;
+  justify-content: center; /* or space-around/space-between for more spacing */
+  align-items: flex-start;
+  gap: 32px; /* Adjust gap as needed */
+}
+
+.contact-info-item {
+  flex: 1 1 220px; /* Minimum width for each item */
+  max-width: 300px;
+  text-align: center;
 }
 
 .home {
