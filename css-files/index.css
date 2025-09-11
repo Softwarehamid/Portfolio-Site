@@ -33,14 +33,18 @@ body.dark {
 }
 
 /* Ensure text in Education and Experience is white in dark mode */
-body.dark .about .about-content .timeline h4,
-body.dark .about .about-content .timeline span {
+.about .about-content .timeline h4,
+.about .about-content .timeline p,
+.about .about-content .timeline span,
+.about .about-content .title {
   color: var(--text-black-900); /* White text in dark mode */
 }
 
 /* Ensure text in other sections is white in dark mode */
-body.dark .projects .project-heading h2,
-body.dark .projects .project-heading p {
+.about .about-content .timeline h4,
+.about .about-content .timeline p,
+.about .about-content .timeline span,
+.about .about-content .title {
   color: var(--text-black-900); /* White text in dark mode */
 }
 
@@ -269,15 +273,9 @@ ul {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* or space-around/space-between for more spacing */
-  align-items: flex-start;
-  gap: 32px; /* Adjust gap as needed */
-}
-
-.contact-info-item {
-  flex: 1 1 220px; /* Minimum width for each item */
-  max-width: 300px;
-  text-align: center;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
 }
 
 .home {
@@ -573,9 +571,8 @@ h3.my-pofession {
   position: relative;
 }
 
-.shaodw-dark {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
+.shadow-dark { box-shadow: 0 0 20px rgba(48,46,77,0.15); }
+
 
 .about
   .about-content
