@@ -9,7 +9,7 @@ section.projects .projects-heading p {
 }
 body.dark section.projects .projects-heading h3,
 body.dark section.projects .projects-heading p {
-  color: var(--text-black-900);
+  color: #ffffff; /* Better contrast in dark mode */
 }
 
 /* Use the section's container as the grid parent */
@@ -135,4 +135,46 @@ section.projects .project-buttons .btn {
     padding: 0 12px;
     gap: 20px;
   }
+}
+
+/* Small overrides for consistent card layout */
+
+/* 1) Make every card the same height within its grid cell */
+section.projects .projects-item { 
+  height: 100%; 
+}
+section.projects .projects-item .projects-item-inner { 
+  height: 100%; 
+}
+
+/* 2) Ensure the image sizing rule always wins (just a bit more specific) */
+section.projects .projects-item .projects-item-inner > img {
+  display: block;            /* kills baseline gap */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 3) Normalize spacing under titles/descriptions so cards don't grow unevenly */
+section.projects .projects-item .projects-info h4 { 
+  margin: 4px 0 4px; 
+}
+section.projects .projects-item .projects-info p { 
+  margin: 0; 
+}
+
+/* 4) Keep button area consistent; remove stray inline margins on links if any */
+section.projects .project-buttons { 
+  gap: 12px; 
+  margin-top: auto; 
+}
+section.projects .project-buttons .btn { 
+  margin: 0 !important; 
+}
+
+/* 5) Make grid rows look cleaner by forcing equal row heights */
+section.projects .container { 
+  align-items: stretch;  /* was start */
 }
