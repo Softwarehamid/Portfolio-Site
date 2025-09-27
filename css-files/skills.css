@@ -1,0 +1,139 @@
+/* Skills Section Styles */
+.skills .skills-heading h3,
+.skills .skills-heading p {
+  color: var(--text-black-900);
+}
+
+body.dark .skills .skills-heading h3,
+body.dark .skills .skills-heading p {
+  color: #ffffff;
+}
+
+.skills .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.skills .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.skills .skills-heading {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.skills-category {
+  margin: 0;
+}
+
+.skills-category-inner {
+  background: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  border-radius: 14px;
+  padding: 25px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skills-category-inner:hover {
+  transform: translateY(-3px);
+  border-color: var(--skin-color);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.category-icon i {
+  font-size: 40px;
+  color: var(--skin-color);
+}
+
+.skills-category h4 {
+  text-align: center;
+  color: var(--text-black-900);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+
+.skill-item {
+  margin-bottom: 20px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-item h5 {
+  color: var(--text-black-900);
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+.skill-percent {
+  color: var(--text-black-700);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-black-50);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-in {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--skin-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark .skills-category-inner {
+  background: var(--bg-black-100);
+  border-color: var(--bg-black-50);
+}
+
+body.dark .skills-category h4,
+body.dark .skill-item h5 {
+  color: #ffffff;
+}
+
+body.dark .skill-percent {
+  color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills .row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skills-category-inner {
+    padding: 20px;
+  }
+
+  .category-icon i {
+    font-size: 35px;
+  }
+}
