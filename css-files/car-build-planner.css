@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark;
+  --bg: #0a1020;
+  --card: #121a30;
+  --text: #e7edf8;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+  --border: #243045;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111b35 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.app-shell {
+  width: min(1100px, 92%);
+  margin: 2rem auto 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: color-mix(in srgb, var(--card) 92%, black);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.hero h1 { margin: .2rem 0; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+.hero p { color: var(--muted); }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; color: #7dd3fc; }
+
+.grid-form {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+label { display: grid; gap: .35rem; font-size: .92rem; color: #c7d2fe; }
+
+input, select, button {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .65rem .75rem;
+  background: #0e172b;
+  color: var(--text);
+}
+
+.btn { cursor: pointer; font-weight: 600; }
+.btn-primary { background: var(--accent); border-color: transparent; color: white; }
+.btn-danger { background: var(--danger); border-color: transparent; color: white; }
+
+.summary, .totals { margin-top: 1rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: .75rem; }
+.summary strong, .totals strong { color: #bfdbfe; }
+.row-between { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+
+.category {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: .9rem;
+  overflow: hidden;
+}
+
+.category h3 {
+  margin: 0;
+  padding: .8rem 1rem;
+  background: #0f1a31;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: .65rem 1rem;
+  border-top: 1px solid #1f2a44;
+  font-size: .92rem;
+}
+
+a { color: #93c5fd; }
+
+.item-actions button {
+  font-size: .8rem;
+  padding: .35rem .55rem;
+  background: transparent;
+  border: 1px solid #3a4d74;
+}
