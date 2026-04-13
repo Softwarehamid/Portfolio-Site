@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Car Build Planner</title>
+  <link rel="stylesheet" href="../css-files/car-build-planner.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Dream Garage</p>
+      <h1>Car Build Planner</h1>
+      <p>Track your dream car price, mod list, categories, and direct product links.</p>
+    </header>
+
+    <section class="card car-meta">
+      <h2>Car Overview</h2>
+      <form id="car-form" class="grid-form">
+        <label>
+          Car Name
+          <input id="car-name" type="text" placeholder="Chevrolet Camaro SS 1LE" required />
+        </label>
+        <label>
+          Price ($)
+          <input id="car-price" type="number" min="0" step="0.01" placeholder="50000" />
+        </label>
+        <label>
+          Out-the-door ($)
+          <input id="car-otd" type="number" min="0" step="0.01" placeholder="56000" />
+        </label>
+        <label>
+          Down Payment ($)
+          <input id="car-down" type="number" min="0" step="0.01" value="15000" />
+        </label>
+        <button type="submit" class="btn btn-primary">Save Car Info</button>
+      </form>
+      <div id="car-summary" class="summary"></div>
+    </section>
+
+    <section class="card">
+      <h2>Add Part / Mod</h2>
+      <form id="part-form" class="grid-form">
+        <label>
+          Category
+          <select id="part-category" required>
+            <option value="">Select category</option>
+            <option>Labor</option>
+            <option>Power</option>
+            <option>Interior</option>
+            <option>Suspension</option>
+            <option>Brakes</option>
+            <option>Cooling</option>
+            <option>Fuel</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          Item Name
+          <input id="part-name" type="text" placeholder="Whipple supercharger" required />
+        </label>
+        <label>
+          Price ($)
+          <input id="part-price" type="number" min="0" step="0.01" placeholder="8449.99" />
+        </label>
+        <label>
+          Product URL
+          <input id="part-link" type="url" placeholder="https://..." />
+        </label>
+        <button type="submit" class="btn btn-primary">Add Item</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>Build Sheet</h2>
+        <button id="reset-btn" class="btn btn-danger" type="button">Reset Project</button>
+      </div>
+      <div id="totals" class="totals"></div>
+      <div id="list-root" class="list-root"></div>
+    </section>
+  </main>
+
+  <script src="../Js-files/car-build-planner.js"></script>
+</body>
+</html>
